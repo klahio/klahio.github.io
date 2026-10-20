@@ -22,12 +22,12 @@
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
   --r-c:6px;
   /* fluid scale: everything below is driven by the viewport, nothing is a fixed box */
-  --reading-size:clamp(16.5px, .34vw + 14.7px, 19.5px);
+  --reading-size:clamp(16px, .3vw + 14.3px, 18px);
   --rail-w:clamp(188px, 15vw, 268px);
   --rail-pad:clamp(16px, 1.3vw, 28px);
   --gutter:clamp(20px, 2.6vw, 56px);
-  --measure:74ch;
-  --col:calc(var(--measure) + 2 * var(--gutter));
+  /* no cap: the article fills its track, as on the page this layout follows */
+  --col:none;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
@@ -130,17 +130,17 @@ article{
 }
 .headmeta{display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-bottom:18px}
 .headmeta .meta{font-family:var(--mono); font-size:12px; color:var(--paper-2)}
-h1{font-size:clamp(27px, 1.9vw + 13px, 40px); margin-bottom:16px; letter-spacing:-.2px}
+h1{font-size:clamp(26px, 1.4vw + 12px, 32px); margin-bottom:16px; letter-spacing:-.2px}
 .lede{font-size:1.02em; color:var(--paper); margin:0 0 10px}
 p{margin:0 0 16px}
 
 h2{
-  font-size:clamp(20px, .85vw + 14px, 27px); margin:0 0 14px; padding-top:4px;
+  font-size:clamp(19px, .7vw + 12.5px, 23px); margin:0 0 14px; padding-top:4px;
   scroll-margin-top:86px;
 }
 section{margin-top:52px; padding-top:28px; border-top:1px solid var(--rule)}
 section:first-of-type{margin-top:40px}
-h3{font-size:clamp(16.5px, .3vw + 14.5px, 19.5px); font-weight:600; margin:28px 0 10px}
+h3{font-size:clamp(16px, .25vw + 13.5px, 18px); font-weight:600; margin:28px 0 10px}
 
 /* project card */
 .proj{
@@ -148,7 +148,7 @@ h3{font-size:clamp(16.5px, .3vw + 14.5px, 19.5px); font-weight:600; margin:28px 
   padding:clamp(18px, 1.6vw, 28px) clamp(18px, 1.8vw, 30px) clamp(16px, 1.4vw, 24px); margin-bottom:22px;
 }
 .proj-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 14px; margin-bottom:6px}
-.proj-head h3{margin:0; font-family:var(--mono); font-size:clamp(15.5px, .28vw + 13.8px, 18.5px); font-weight:600; color:var(--paper-hi)}
+.proj-head h3{margin:0; font-family:var(--mono); font-size:clamp(15px, .25vw + 12.5px, 17px); font-weight:600; color:var(--paper-hi)}
 .tags{display:flex; flex-wrap:wrap; gap:6px}
 .tag{
   font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:.6px;
@@ -176,7 +176,7 @@ h3{font-size:clamp(16.5px, .3vw + 14.5px, 19.5px); font-weight:600; margin:28px 
 pre{
   background:var(--surface-2); border:1px solid var(--rule); border-radius:var(--r-c);
   padding:14px 16px; overflow-x:auto; margin:0 0 16px;
-  font-size:clamp(12.5px, .22vw + 11.3px, 14.5px); line-height:1.65; color:var(--paper);
+  font-size:clamp(12.5px, .2vw + 11.4px, 13.5px); line-height:1.65; color:var(--paper);
 }
 pre .c{color:var(--paper-2)}
 p code{
