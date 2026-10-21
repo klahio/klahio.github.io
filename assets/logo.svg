@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 32" role="img" aria-label="klah.io">
+  <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 5.5V26.5"/>
+    <path d="M23.5 10.5 11 18.4"/>
+  </g>
+  <path d="M11 18.4 24 26.5" fill="none" stroke="var(--accent, #d6bd86)" stroke-width="2.6" stroke-linecap="round"/>
+  <text x="36" y="24" font-family="'IBM Plex Serif',Georgia,serif" font-size="21" fill="currentColor">klah<tspan fill="var(--accent, #d6bd86)">.</tspan>io</text>
+</svg>
