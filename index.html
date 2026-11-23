@@ -245,13 +245,14 @@ footer a{color:var(--paper-2)}
     <a href="#overview" class="on">Overview</a>
     <a href="#ai-stack-lite">ai-stack-lite</a>
     <a href="#kubectl-inferon">kubectl-inferon</a>
+    <a href="#bash-aliases">bash-aliases</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <article id="main">
     <div class="headmeta" id="overview" style="scroll-margin-top:86px">
       <span class="badge">Open source</span>
-      <span class="meta">2 projects &middot; Kubernetes &middot; Helm &middot; kubectl</span>
+      <span class="meta">3 projects &middot; Kubernetes &middot; Helm &middot; kubectl</span>
     </div>
     <h1>Things built to be run</h1>
     <p class="lede">
@@ -261,8 +262,7 @@ footer a{color:var(--paper-2)}
       each one is what it is.
     </p>
     <p>
-      Each project is Apache-2.0 on GitHub, versioned, and installable with a single
-      command. Nothing here is a demo. If one of them breaks on your cluster, that is a
+      Each project is Apache-2.0 on GitHub and installable with a single command. Nothing here is a demo. If one of them breaks on your cluster, that is a
       bug worth an issue.
     </p>
 
@@ -392,6 +392,69 @@ kubectl inferon status sklearn-iris -n kserve-test</pre>
             Source on GitHub
           </a>
           <a class="lbtn" href="https://github.com/klahio/kubectl-inferon/releases">Releases</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="bash-aliases">
+      <h2>bash-aliases</h2>
+
+      <div class="proj">
+        <div class="proj-head">
+          <h3>bash-aliases</h3>
+          <div class="tags">
+            <span class="tag">bash</span>
+            <span class="tag">kubectl</span>
+            <span class="tag">Tab completion</span>
+          </div>
+        </div>
+        <p>
+          Short bash aliases for kubectl &mdash; <code>k</code>, <code>kgp</code>,
+          <code>klf</code>, <code>kex</code>, <code>kns</code> and about thirty more &mdash;
+          plus helm, Tekton, Argo CD and Flux. Tab completion works on the aliases too, so
+          <code>k get po&lt;Tab&gt;</code> completes like <code>kubectl</code> does.
+        </p>
+
+        <dl class="kv">
+          <div class="kv-row">
+            <dt>.bash_aliases</dt>
+            <dd>the aliases, and <code>kns</code> to show or switch the namespace<span class="where">linked to ~/.bash_aliases</span></dd>
+          </div>
+          <div class="kv-row">
+            <dt>completion.bash</dt>
+            <dd>completion for kubectl, helm, tkn, argocd, flux and other CLIs that are installed<span class="where">cached, regenerated when a CLI is upgraded</span></dd>
+          </div>
+          <div class="kv-row">
+            <dt>install.sh</dt>
+            <dd>downloads both files and makes ~/.bashrc load them<span class="where">safe to run again; --uninstall undoes it</span></dd>
+          </div>
+        </dl>
+
+        <pre><span class="c"># install, or run again to update</span>
+curl -fsSL https://raw.githubusercontent.com/klahio/bash-aliases/main/install.sh | bash
+
+<span class="c"># undo</span>
+~/.bash-aliases/install.sh --uninstall</pre>
+
+        <p>
+          The files go into <code>~/.bash-aliases</code>. An existing
+          <code>~/.bash_aliases</code> is moved to a timestamped backup first, and
+          <code>~/.bashrc</code> gets one marked block with only what it does not load
+          already. A failed download changes nothing.
+        </p>
+
+        <p class="note">
+          The one-liner installs from the <code>main</code> branch; there are no releases.
+          To read the script before it runs, download it with <code>-o install.sh</code> and
+          run <code>bash install.sh</code>, or clone the repository and run
+          <code>./install.sh</code> there, which uses the clone's files and downloads nothing.
+        </p>
+
+        <div class="links">
+          <a class="lbtn" href="https://github.com/klahio/bash-aliases">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+            Source on GitHub
+          </a>
         </div>
       </div>
     </section>
